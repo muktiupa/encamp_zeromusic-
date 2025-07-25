@@ -1,0 +1,380 @@
+import Head from "next/head";
+import { useState, useEffect } from "react";
+import Header from "../components/common/Header";
+import Footer from "../components/common/Footer";
+import SliderSection from "../components/zfm/SliderSection";
+import LastSection from "../components/itenary/LastSection";
+import ScoreArea from "../components/zfm/ScoreArea";
+import Faq from "../components/faq/Faq";
+import { Datafaq } from "../components/faq/Datafaq";
+import { initializeRazorpay } from "../components/razorpay/initializerazorpay";
+import { Tagmanageri } from "../components/common/tagmanageri";
+import sendMail from "../function/sendMail";
+import Sidebar from "../components/zfm/Sidebar";
+import TripDetails from "../components/zfm/TripDetails";
+import Supported from "../components/home/Supported";
+import Testimonial from "../components/home/Testimonial";
+import Contactform from "../components/zfm/Contactform";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+const Ziro_camping = ({ data, base_url, faqdata }) => {
+  const [toggle, setToggle] = useState(false);
+  const [toggles, setToggles] = useState(false);
+  const [salert, setSalert] = useState({ sucess: "", fail: "" });
+  const [bloading, setBloading] = useState(false);
+  const {
+    title,
+    images,
+    durationtext,
+    name,
+    price,
+    carbon,
+    description,
+    addons,
+    tripdetailsc,
+    youtubeurl,
+    simillartrip,
+    checkindate,
+    camping_header,
+    package_details,
+    package_details_location,
+    package_details_location_link,
+    meta,
+    tripdetails_note,
+    post_zfm_trip_details
+    
+  } = data;
+
+  useEffect(() => {
+    Tagmanageri();
+  }, []);
+
+  const getAddonsName = (arr) => {
+    let namearr = [];
+    if (arr && arr.length > 0) {
+      arr.map((x) => {
+        let checkvcdata = addons.filter((addon) => addon.id === x);
+        if (checkvcdata && checkvcdata.length > 0) {
+          namearr = [...namearr, checkvcdata[0].name];
+        }
+      });
+    }
+    return namearr;
+  };
+
+  function getPrice(priceData) {
+    function formatDate(date) {
+      const day = String(date.getDate()).padStart(2, "0");
+      const month = String(date.getMonth() + 1).padStart(2, "0");
+      const year = date.getFullYear();
+      return `${day}-${month}-${year}`;
+    }
+
+    function isWithinEarlyBidding(today, earlyBiddingDates) {
+      const startDate = new Date(earlyBiddingDates[0]);
+      const endDate = new Date(earlyBiddingDates[1]);
+      return today >= startDate && today <= endDate;
+    }
+
+    const today = new Date();
+
+    if (isWithinEarlyBidding(today, priceData.earlybidding)) {
+      return priceData.price;
+    } else {
+      return priceData.p_price;
+    }
+  }
+  function getmrpPrice(priceData) {
+    function formatDate(date) {
+      const day = String(date.getDate()).padStart(2, "0");
+      const month = String(date.getMonth() + 1).padStart(2, "0");
+      const year = date.getFullYear();
+      return `${day}-${month}-${year}`;
+    }
+
+    function isWithinEarlyBidding(today, earlyBiddingDates) {
+      const startDate = new Date(earlyBiddingDates[0]);
+      const endDate = new Date(earlyBiddingDates[1]);
+      return today >= startDate && today <= endDate;
+    }
+
+    const today = new Date();
+
+    if (isWithinEarlyBidding(today, priceData.earlybidding)) {
+      let mrp = Math.ceil((+priceData.price * 30) / 100 + +priceData.price);
+      return mrp;
+    } else {
+      let mrp = Math.ceil((+priceData.p_price * 30) / 100 + +priceData.p_price);
+      return mrp;
+    }
+  }
+  const todayprice = getPrice(data);
+  const todaymrpprice = getmrpPrice(data);
+
+  return (
+    <>
+      <Head>
+        <title>{`${meta?.title ?? ''}`}</title>
+        <meta
+          name="description"
+          content={`${meta?.description ?? ''}`}
+        />
+        <meta
+          name="keywords"
+          content={`${meta?.keyword ?? ''}`}
+        />
+        <meta
+          property="og:title"
+          content={`${meta?.og_title ?? ''}`}
+        />
+        <meta
+          property="og:description"
+          content={`${meta?.og_description ?? ''}`}
+        />
+        <link rel="icon" src="/favicon.ico" />
+        <meta
+          name="viewport"
+          content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
+        />
+        <meta
+          property="og:image"
+          content={`${meta?.og_image ?? ''}`}
+        />
+        <meta property="og:url" content={`${meta?.og_url ?? ''}`} />
+        <link rel="canonical" href={`${meta?.og_url ?? ''}`} />
+      </Head>
+      <Header theme={"light"} base_url={base_url} />
+              <Sidebar
+                getAddonsName={getAddonsName}
+                datax={data}
+                initializeRazorpay={initializeRazorpay}
+                defaultpeople={2}
+                bloading={bloading}
+                setBloading={setBloading}
+                AOS={AOS}
+                base_url={base_url}
+                setToggle={setToggle}
+                toggle={toggle}
+                salert={salert}
+                setSalert={setSalert}
+                Tagmanageri={Tagmanageri}
+                todayprice={todayprice}
+                durationtext={durationtext}
+                checkindate={checkindate}
+                post_zfm_trip_details={post_zfm_trip_details}
+              />
+              <Contactform
+                AOS={AOS}
+                Tagmanageri={Tagmanageri}
+                toggle={toggles}
+                setToggle={setToggles}
+                sendMail={sendMail}
+                title={title}
+              />
+              <SliderSection
+                AOS={AOS}
+                images={images}
+                base_url={base_url}
+                nameite={name}
+                itenaryduration={durationtext}
+                totalcf={carbon}
+                totalprice={price}
+              />
+              <TripDetails
+                toggles={toggles}
+                setToggles={setToggles}
+                isgrouptrip={false}
+                AOS={AOS}
+                base_url={base_url}
+                setToggle={setToggle}
+                toggle={toggle}
+                description={description}
+                nameite={name}
+                tripdetailsc={tripdetailsc}
+                totalpricetag={` ${todayprice}/pax`}
+                todaymrppricetag={` ${todaymrpprice}/pax`}
+                youtubeurl={`${youtubeurl}`}
+                descriptionandoffering={""}
+                aboutziro={true}
+                durationtext={durationtext}
+                simillartrip={simillartrip}
+                camping_header={camping_header}
+                package_details={package_details}
+                package_details_location={package_details_location}
+                package_details_location_link={package_details_location_link}
+                tripdetails_note={tripdetails_note}
+                addons={addons}
+              />
+              <Faq faqdata={faqdata}/>
+              <ScoreArea AOS={AOS} base_url={base_url} totalcf={carbon} />
+              <Testimonial AOS={AOS} />
+              <Supported AOS={AOS} />
+              <LastSection AOS={AOS} base_url={base_url} />
+      <Footer />
+    </>
+  );
+};
+export default Ziro_camping;
+
+export async function getServerSideProps() {
+  const base_url = process.env.BASEURL;
+  const data = {
+    name: "Encamp ZFM 2025 Package",
+    title:"Encamp ZFM 2025",
+    camping_header:"Camping at Ziro Festival of Music 2025",
+    package_details:"Twin Sharing Dome Tent Stay + Complimentary Breakfast + Campsite Facilities",
+    package_details_location:"Ziro,Arunachal Pradesh",
+    package_details_location_link:"https://www.google.com/maps/d/embed?mid=1V0mXPhGW2WFNpXCePjV6L3LbWa8uCAE&ehbc=2E312F",
+    checkindate:"25-09-2025",
+    youtubeurl: "https://www.youtube.com/embed/S_-f0OxyU3U?si=O5SVNIV1jcqai5IM",
+    tripdetails:
+      "5D/4N Twin Sharing Dome Tent Stay + Complimentary Breakfast + Campsite Facilities",
+    tripdetails_note:"We also have a group tour package that is end to end from Guwahati to Guwahati and also covers Seppa, Bomdilla, Dirang, Sangti Valley, Tawang and Shergaon.",
+    duration: { from: "2025-09-25", to: "2025-09-29" },
+    durationtext:  "5 Days & 4 Nights",
+    price: 17999,
+    p_price: 17999,
+    earlybidding: ["2025-05-01", "2025-06-30"],
+    carbon: "375 KgCO2 per person",
+    sizeoftent: "4 by 7 feet",
+    post_zfm_trip_details:"Post ZFM 2025, we've organized 2 tours. You can add these to your camping package on the booking screen.",
+    simillartrip: [
+      { name: "Ziro Festival Road Trip (Ex Guwahati) 5N6D", 
+        link: "/itinerary/ziro-festival-of-music-road-trip-(ex-guwahati)-5n-6d/65b4ce870e1fd7e47d9172cc",
+        price:27999
+      }
+      ],
+    description:
+      "While the festival music keeps you grooving, your abode should certainly be a place of utmost comfort. And thats what we are offering you at Encamp Ziro. <br/><br/> Lounge back and catch up with your friends and  tent mates in the bamboo machang under ten million stars , or jam the night away and welcome the dawn by the bonfire OR simply snooze off after a heavy day of blissful experiences and take the morning nature walk . The choice is yours to explore once youre there. But don’t miss our deal, coz its really a steal! We bet youll get any other camping experience as Encamp at the price we are offering.<br/><br/> So wander no more & book today!",
+    addons: [
+      {
+        id: "axc1",
+        type: "activity",
+        s_type:"activity",
+        name: "Village Guided Walks",
+        date: "26-09-2025",
+        price: 800,
+      },
+      {
+        id: "axc2",
+        type: "activity",
+        s_type:"activity",
+        name: "Ziro Valley Sightseeing",
+        date: "27-09-2025",
+        price: 1500,
+      },
+      {
+        id: "axc3",
+        type: "activity",
+        s_type:"activity",
+        name: "Fishing in Paddy Field",
+        date: "27-09-2025",
+        price: 800,
+      },
+      {
+        id: "axc4",
+        type: "activity",
+        s_type:"activity",
+        name: "Winery Visit and Tasting",
+        date: "28-09-2025",
+        price: 2500,
+      },
+      {
+        id: "axc7",
+        either: true,
+        type: "vehicle",
+        s_type:"pickup",
+        name: "Naharlagun Pickup & Drop",
+        price: 4000,
+        desc: "While the destination is breathtaking, the journey should be thrilling too, right? Well, our side pick-up and drop services ensure you get only the right kind of thrills as you arrive and depart the festival.",
+      },
+      {
+        id: "axc8",
+        either: true,
+        type: "vehicle",
+        s_type:"pickup",
+        name: "Guwahati Pickup & Drop",
+        price: 6000,
+        desc: "While the destination is breathtaking, the journey should be thrilling too, right? Well, our side pick-up and drop services ensure you get only the right kind of thrills as you arrive and depart the festival.",
+      },
+      {
+        id: "axc9",
+        either: true,
+        type: "vehicle",
+        s_type:"pickup",
+        name: "Holongi Airport Pickup & Drop",
+        price: 4500,
+        desc: "",
+      },
+      {
+        id: "axc5",
+        type: "activity",
+        s_type:"experience",
+        name: "Post ZFM tour 6N/7D Tawang",
+        date: "29-10-2025",
+        price: 41999,
+        a_link:"/itinerary/tawang---the-land-of-monpas---post-ziro-festival-group-tour-(6n-7d)/66433245dad32d6195007bdf"
+      },
+      {
+        id: "axc6",
+        type: "activity",
+        s_type:"experience",
+        name: "Post ZFM tour 6N/7D Anini",
+        date: "29-10-2025",
+        price: 38999,
+        a_link:"/itinerary/anini---valley-of-waterfalls---post-ziro-festival-of-music-group-tour---(6n-7d)/66445492dad32d619500c5e3"
+      },
+       {
+        id: "axc7",
+        type: "activity",
+        s_type:"experience",
+        name: "Post ZFM tour Mechuka 5N/6D",
+        date: "29-10-2025",
+        price: 38999,
+        a_link:"/itinerary/mechuka---the-lost-paradise---post-ziro-festival-of-music-group-tour---(5n-6d)/65c30d62342ffa54483c638f"
+      },
+       {
+        id: "axc8",
+        type: "activity",
+        s_type:"experience",
+        name: "Post ZFM Group Tour Hidden Gems Meghalaya 4N/5D",
+        date: "30-10-2025",
+        price: 24999,
+        a_link:"/itinerary/hidden-gems-meghalaya---post-ziro-festival-of-music-group-tour---(4n-5d)/673595602a677751f3b3b073"
+      }
+    ],
+    images: [
+      "/assets/ziro/night.jpg",
+      "/assets/ziro/dayevent.jpg",
+      "/assets/ziro/campsite.jpg",
+      "/assets/ziro/chill.jpg",
+      "/assets/ziro/ziro_1.jpg",
+      "/assets/ziro/ziro_2.jpg",
+      "/assets/ziro/ziro_3.jpg",
+      "/assets/ziro/ziro_4.jpg",
+      "/assets/ziro/ziro_5.jpg",
+      "/assets/ziro/ziro_6.jpg",
+      "/assets/ziro/ziro_7.jpg",
+    ],
+    meta:{
+      title:"Camping at Ziro Festival of Music | Encamp Adventures",
+      description:"Experience the Ziro Festival of Music with Encamp Adventures. Book a 4N/5D Twin Sharing Dome Tent Stay with Complimentary Breakfast & Campsite Facilities. Explore more with our Village Guided Walks, Ziro Valley Tours and more. Offset your carbon footprint with us.",
+      keyword:"Ziro Festival of Music, Camping, Dome Tent Stay, Ziro, Arunachal Pradesh, Encamp Adventures, Music Festival, Outdoor Adventures, Sustainable Tourism, Carbon Offset",
+      og_title:"Camping at Ziro Festival of Music | Encamp Adventures",
+      og_description:"Experience the Ziro Festival of Music with Encamp Adventures. Book a 4N/5D Twin Sharing Dome Tent Stay with Complimentary Breakfast & Campsite Facilities. Explore more with our Village Guided Walks, Ziro Valley Tours and more. Offset your carbon footprint with us.",
+      og_image:`${base_url}/assets/ziro/swiper-image-2.jpg`,
+      og_url:`${base_url}/ziro_camping`
+    }
+
+    };
+  let ds = [];
+  let ss = await Datafaq();
+  if (ss && ss.length > 0) {
+    ds = ss.filter(
+      (item) => item.category.toLowerCase().indexOf("zero".toLowerCase()) > -1
+    );
+  }
+
+  return { props: { data: data, base_url: base_url, faqdata: ds } };
+}

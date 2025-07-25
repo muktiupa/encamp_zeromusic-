@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Open Graph data -->
+    <meta property="og:title" content="Join the Earth Hour Campaign 2024" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://encampadventures.com/static/earthhour-2024.html" />
+    <meta property="og:image" content="./earthhour2.jpg" />
+    <meta property="og:description" content="Turn off the lights to reveal the stars and join the global movement to protect our planet. Participate in Earth Hour 2024." />
+    <meta property="og:site_name" content="Encamp Adventures" />
+  
+    <title>Earth Hour Campaign</title>
+    <link href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+
+
+    <style>
+      
+      @keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+/* Existing styles for the paragraph */
+.reveal-stars {
+    font-family: 'Anton', 'Arial Narrow', Arial, sans-serif;
+}
+
+body.dark .reveal-stars {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 2s, opacity 2s linear;
+}
+      
+h1 {
+  background: linear-gradient(270deg, #4CAF50, #8BC34A, #CDDC39, #FFEB3B, #FFC107, #FF9800, #FF5722, #795548);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradientAnimation 15s ease infinite;
+  font-family: 'Anton', 'Arial Narrow', Arial, sans-serif;
+}
+
+      p {
+    font-family: 'Anton', 'Arial Narrow', Arial, sans-serif;
+}
+
+      .logo {
+    padding-top: 80px; /* Increase space if needed */
+    display: block;
+    width: 100px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+        .toggle-switch {
+            cursor: pointer;
+            width: 100px;
+            height: 50px;
+            background-color:#e2e8f0;
+            position: relative;
+            border-radius: 25px;
+            transition: background-color 0.3s;
+            display: inline-block; /* Keeps switch from moving */
+        }
+        .toggle-switch .switch-btn {
+            position: absolute;
+            top: 5px;
+            left: 55px;
+            width: 40px;
+            height: 40px;
+            background-color: #facc15;
+            border-radius: 50%;
+            border-color:#020617;
+            transition: left 0.3s, background-color 0.3s, transform 0.3s;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .dark .toggle-switch {
+    background-color: transparent; /* Make toggle switch background transparent in dark mode */
+}
+        .dark .toggle-switch .switch-btn {
+            left: 5px;
+            background-color: transparent;
+            background-image: url('./globe.png');
+            transform: scale(1.2);
+        }
+        body.dark {
+            background-color: #000;
+        }
+        .stars, #webgl-container {
+            transition: opacity 2s;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            display: none; /* Initially hidden */
+        }
+        body.dark .stars {
+            opacity: 1;
+        }
+        .timer, .facts {
+            color: white;
+            text-align: center;
+            position: absolute;
+            width: 100%;
+            font-size: 20px;
+            z-index: 10;
+            opacity: 0; /* Initially hidden */
+            transition: opacity 2s; /* Smooth transition for showing/hiding */
+        }
+        .timer {
+    color: white;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    font-size: 60px; /* Increased font size */
+    font-family: 'Anton', 'Arial Narrow', Arial, sans-serif;
+    z-index: 10;
+    top: 20%;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 2s; /* Smooth transition for showing/hiding */
+}
+
+
+        .facts {
+    color: white;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    font-size: 20px;
+    z-index: 10;
+    top: 30%;
+    font-family: 'Courier New', Courier, monospace; /* Set the font to Courier */
+    opacity: 0; /* Start hidden for the fade-in effect */
+    transition: opacity 2s ease-in-out; /* Smooth transition for opacity change */
+    padding: 0 20px; /* Adds horizontal padding */
+    box-sizing: border-box; /* Ensures padding is included in the element's total width and height */
+
+}
+
+        body.dark .timer, body.dark .facts {
+            opacity: 1; /* Show when dark mode is activated */
+        }
+    </style>
+</head>
+<body class="transition ease-in-out duration-500">
+
+    <div id="webgl-container" class="fixed w-full h-full top-0 left-0 z-0 transition-opacity duration-500"></div>
+    <div class="flex flex-col items-center justify-center min-h-screen p-5 z-10">
+        <h1 class="text-5xl font-bold text-center mb-5">EARTH HOUR 2024</h1>
+        <p class="text-gray-800 text-2xl font-normal text-center mb-5 reveal-stars">Turn off the light to reveal the stars...</p>
+        <i class="fas fa-arrow-down text-center pb-10" style="display: block; color: black; font-size: 24px; margin-top: 20px;"></i>
+        <div class="toggle-switch" onclick="toggleSwitch(this)">
+            <div class="switch-btn"></div>
+            <img src="https://encampadventures.com/assets/img/logo.svg" alt="Encamp Adventures Logo" class="logo" style="margin-top: 20px; display: block; width: 100px; height: auto;">
+          <button id="shareButton" class="mt-10 text-white bg-green-500 hover:bg-green-700 focus:outline-none font-bold py-2 px-4 rounded">
+    <i class="fas fa-share-alt"></i> Share
+</button>
+
+          
+
+        </div>
+      
+        <div id="timer" class="timer text-lg">01:00:00</div>
+        <div id="facts" class="facts"></div>
+     
+      
+    </div>
+
+    <script>
+        let timerInterval;
+        let typingTimeout;
+
+        function toggleSwitch(element) {
+            const isDark = document.body.classList.toggle('dark');
+            const headline = document.querySelector('h1');
+            const timer = document.getElementById('timer');
+            const facts = document.getElementById('facts');
+
+            if (isDark) {
+                headline.style.opacity = 0;
+                timer.style.opacity = 1;
+                facts.style.opacity = 1;
+                startTimer(3600);
+                showFacts();
+                document.getElementById('webgl-container').style.display = 'block'; // Show WebGL container
+                initWebGLStarfield(); // Initialize or ensure the WebGL starfield is visible
+            } else {
+                headline.style.opacity = 1;
+                timer.style.opacity = 0;
+                facts.style.opacity = 0;
+                clearInterval(timerInterval);
+                timer.textContent = "01:00:00";
+                document.getElementById('webgl-container').style.display = 'none'; // Hide WebGL container
+            }
+        }
+      
+      function initWebGLStarfield() {
+            // Ensure the container is visible
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({alpha: true}); // Alpha true to support transparency
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.getElementById('webgl-container').appendChild(renderer.domElement);
+
+            const starGeometry = new THREE.BufferGeometry();
+            const starMaterial = new THREE.PointsMaterial({color: 0xffffff});
+
+            const starVertices = [];
+            for (let i = 0; i < 10000; i++) {
+                const x = (Math.random() - 0.5) * 2000;
+                const y = (Math.random() - 0.5) * 2000;
+                const z = -Math.random() * 2000;
+                starVertices.push(x, y,z);
+            }
+
+            starGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starVertices, 3));
+            const stars = new THREE.Points(starGeometry, starMaterial);
+            scene.add(stars);
+            camera.position.z = 1;
+
+            function animate() {
+                requestAnimationFrame(animate);
+                stars.rotation.x += 0.0002;
+                stars.rotation.y += 0.0002;
+                renderer.render(scene, camera);
+            }
+
+            animate();
+
+            // Handle window resize
+            function onWindowResize() {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            }
+
+            window.addEventListener('resize', onWindowResize, false);
+        }
+
+    function startTimer(duration = 3600) {
+        clearInterval(timerInterval); // Clear any existing timer interval
+        const timerElement = document.getElementById('timer');
+        let time = duration;
+
+        timerInterval = setInterval(() => { // Use setInterval and store its reference to clear it later
+            let hours = Math.floor(time / 3600);
+            let minutes = Math.floor((time % 3600) / 60);
+            let seconds = time % 60;
+            timerElement.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+            if (time <= 0) {
+                clearInterval(timerInterval); // Stop the timer when it reaches 0
+            }
+            time--;
+        }, 1000);
+    }
+
+        function showFacts() {
+    const factsElement = document.getElementById('facts');
+    const facts = [
+    "Did you know that Earth Day was first celebrated on April 22, 1970, and is now recognized as the planet's largest civic event?",
+    "I pledge to plant at least one tree every year to support reforestation and increase green cover.",
+    "Did you know that recycling just one aluminum can save enough energy to listen to a full album on your smartphone?",
+    "I pledge to recycle more and actively participate in reducing waste by properly sorting my recyclables.",
+    "Did you know that Earth Day 2024 marks the 54th anniversary of this important day, highlighting more than half a century of global environmental activism?",
+    "I pledge to reduce my carbon footprint by walking, biking, or using public transportation instead of driving whenever possible.",
+    "Did you know that over 100 million people around the world are expected to participate in Earth Day events and initiatives each year?",
+    "I pledge to support renewable energy projects by choosing green energy for my home and advocating for clean energy policies.",
+    "Did you know that reducing water waste not only helps conserve a precious resource but also saves energy needed to process and deliver it?",
+    "I pledge to conserve water by fixing leaks, taking shorter showers, and using water-efficient appliances.",
+    "Did you know that global forest cover loss is estimated to be over 18 million acres each year, equivalent to 27 soccer fields every minute?",
+    "I pledge to support sustainable forest management practices and products to help combat deforestation.",
+    "Did you know that the fashion industry is the second-largest polluter of freshwater resources on the planet?",
+    "I pledge to buy more eco-friendly and ethically made clothing, and to recycle or donate my old clothes instead of throwing them away.",
+    "Did you know that by reducing meat consumption by just 15%, we can save enough water to supply the needs of about 25 million people each year?",
+    "I pledge to incorporate more plant-based meals into my diet to reduce water usage and greenhouse gas emissions.",
+    "Did you know that the Great Pacific Garbage Patch is the largest accumulation of ocean plastic in the world and is twice the size of Texas?",
+    "I pledge to reduce my use of single-use plastics by opting for reusable bags, bottles, and containers.",
+    "Did you know that energy-efficient appliances can reduce energy use by up to 50%, significantly lowering greenhouse gas emissions?",
+    "I pledge to replace older appliances with energy-efficient models and to always turn off lights and electronics when not in use.",
+    "Did you know bees are vital for crop pollination, affecting 35% of global food production?",
+    "I pledge to plant native flowers and avoid pesticides.",
+    "Did you know electronic waste is only 2% of America's trash but 70% of its toxic waste?",
+    "I pledge to recycle electronics and support used electronics markets.",
+    "Did you know over a billion people participate in Earth Day globally, making it the largest civic event?",
+    "I pledge to participate in local Earth Day activities.",
+    "Did you know dishwashers are more water-efficient than hand-washing, saving 100 gallons a week?",
+    "I pledge to use water-efficient appliances.",
+    "Did you know food waste would be the third-largest greenhouse gas emitter if it were a country?",
+    "I pledge to reduce food waste through meal planning and composting.",
+    "Did you know cycling to work can reduce your carbon footprint significantly?",
+    "I pledge to cycle or walk more instead of driving.",
+    "Did you know one tree can absorb about a ton of CO2 over its lifetime?",
+    "I pledge to participate in tree-planting activities.",
+    "Did you know reducing shower time by 2 minutes can save over 10 gallons of water?",
+    "I pledge to take shorter showers to conserve water.",
+    "Did you know LED bulbs use 75% less energy than incandescent lighting?",
+    "I pledge to switch to LED lighting in my home.",
+    "Did you know oceans absorb 30% of CO2 produced by humans, buffering climate impacts?",
+    "I pledge to reduce my plastic use to protect marine life.",
+    "Did you know composting kitchen scraps can reduce landfill waste significantly?",
+    "I pledge to start composting organic waste.",
+    "Did you know fast fashion is one of the largest contributors to sea pollution?",
+    "I pledge to buy sustainable or second-hand clothing.",
+    "Did you know a single car emits about 4.6 metric tons of carbon dioxide per year?",
+    "I pledge to use public transportation more often.",
+    "Did you know using a reusable water bottle can save 156 plastic bottles annually?",
+    "I pledge to use reusable bottles and containers.",
+    "Did you know that unplugging devices when not in use can save energy and money?",
+    "I pledge to unplug electronics and appliances when not in use."
+
+];
+
+    let factIndex = 0;
+    let charIndex = 0;
+    let isTyping = true;
+
+    // Clear any ongoing typing effect before starting a new one
+    clearTimeout(typingTimeout);
+    factsElement.textContent = '';
+    factsElement.style.opacity = 0; // Reset opacity to ensure fade effect works properly
+
+    const typeFact = () => {
+        if (isTyping) {
+            if (charIndex < facts[factIndex].length) {
+                factsElement.textContent += facts[factIndex].charAt(charIndex);
+                charIndex++;
+                typingTimeout = setTimeout(typeFact, 100); // Adjust typing speed
+            } else {
+                isTyping = false;
+                typingTimeout = setTimeout(typeFact, 2000); // Wait before fading out
+            }
+        } else {
+            factsElement.style.opacity = 0; // Fade out the current fact
+            typingTimeout = setTimeout(() => {
+                factIndex = (factIndex + 1) % facts.length;
+                charIndex = 0;
+                factsElement.textContent = ''; // Clear current fact text
+                factsElement.style.opacity = 1; // Ensure text is visible for next fact
+                isTyping = true;
+                typeFact(); // Start typing next fact
+            }, 2000); // Delay before starting to type next fact
+        }
+    };
+
+    // Ensure the element is visible for the first fact and start typing the first fact
+    typingTimeout = setTimeout(() => {
+        factsElement.style.opacity = 1;
+        typeFact();
+    }, 200);
+}
+      
+      document.getElementById('shareButton').addEventListener('click', function() {
+    if (navigator.share) {
+        navigator.share({
+            title: 'Join Earth Hour 2024',
+            url: 'https://rb.gy/961rk8'
+        }).then(() => {
+            console.log('Thanks for sharing!');
+        })
+        .catch(console.error);
+    } else {
+        // Fallback for browsers that don't support the Share API
+        navigator.clipboard.writeText('https://rb.gy/961rk8').then(() => {
+            alert('Link copied to clipboard');
+        }).catch(console.error);
+    }
+});
+
+
+
+    </script>
+
+</body>
+</html>
+

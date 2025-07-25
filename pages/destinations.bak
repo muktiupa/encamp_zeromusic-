@@ -1,0 +1,43 @@
+import {useEffect} from 'react';
+import HtmlHead from '../components/common/HtmlHead';
+import Header from '../components/common/Header';
+import Footer from '../components/common/Footer';
+import AOS from "aos";
+import "aos/dist/aos.css";
+import FormSection from "../components/destinations/FormSection";
+import Places from "../components/destinations/Places";
+import Review from "../components/destinations/Review";
+import Testimonial from "../components/home/Testimonial";
+import Supported from "../components/home/Supported";
+import {Tagmanageri} from "../components/common/tagmanageri";
+import sendMail from "../function/sendMail";
+import ReferralNotification from '../components/common/ReferralNotification';
+
+
+
+const Destinations=()=>{
+
+
+useEffect(()=>{
+Tagmanageri();
+
+},[]);
+
+
+return (
+         <>
+	     <HtmlHead/>
+         <Header/>
+         <ReferralNotification/>
+         <FormSection AOS={AOS}  sendMail={sendMail} Tagmanageri={Tagmanageri}/>
+         <Places AOS={AOS}/>
+         <Review AOS={AOS}/>
+         <Testimonial AOS={AOS}/>
+         <Supported AOS={AOS}/>
+         
+         <Footer/>
+         </>
+	   )
+
+}
+export default Destinations;

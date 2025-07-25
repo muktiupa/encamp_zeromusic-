@@ -1,0 +1,226 @@
+[
+    {
+      "type": "SUV",
+      "cartype": "Desire",
+      "baseprice": 4000,
+      "capacity": 4,
+      "ftype": "Petrol",
+      "calculation": "Per Day",
+      "selfdrive": 3000,
+      "images": ["https://via.placeholder.com/150?text=SUV"],
+      "description": "A spacious SUV ideal for family trips and rough terrains."
+    },
+    {
+      "type": "SUV",
+      "cartype": "Creta",
+      "baseprice": 5000,
+      "capacity": 4,
+      "ftype": "Petrol",
+      "calculation": "Per Day",
+      "selfdrive": 3500,
+      "images": ["https://via.placeholder.com/150?text=SUV"],
+      "description": "A stylish and comfortable SUV for city driving."
+    },
+    {
+      "type": "Sedan",
+      "cartype": "Dzire",
+      "baseprice": 4000,
+      "capacity": 4,
+      "ftype": "Petrol",
+      "calculation": "Per Day",
+      "selfdrive": 3000,
+      "images": ["https://via.placeholder.com/150?text=Sedan"],
+      "description": "A comfortable and stylish sedan for city driving."
+    },
+    {
+      "type": "Sedan",
+      "cartype": "City",
+      "baseprice": 4500,
+      "capacity": 4,
+      "ftype": "Petrol",
+      "calculation": "Per Day",
+      "selfdrive": 3200,
+      "images": ["https://via.placeholder.com/150?text=Sedan"],
+      "description": "A compact and efficient sedan for city driving."
+    },
+    {
+      "type": "Traveller",
+      "cartype": "Innova",
+      "baseprice": 10000,
+      "capacity": 13,
+      "ftype": "Diesel",
+      "calculation": "Per Day",
+      "images": ["https://via.placeholder.com/150?text=Traveller"],
+      "description": "A large vehicle perfect for group travel or long trips."
+    },
+    {
+      "type": "Traveller",
+      "cartype": "Tempo",
+      "baseprice": 12000,
+      "capacity": 13,
+      "ftype": "Diesel",
+      "calculation": "Per Day",
+      "images": ["https://via.placeholder.com/150?text=Traveller"],
+      "description": "A spacious and comfortable vehicle for group travel or long trips."
+    },
+    {
+      "type": "Bike",
+      "cartype": "Pulsar",
+      "baseprice": 1500,
+      "capacity": 2,
+      "ftype": "Petrol",
+      "calculation": "Per Day",
+      "selfdrive": 1500,
+      "images": ["https://via.placeholder.com/150?text=Bike"],
+      "description": "A compact bike for quick and easy travel around the city."
+    },
+    {
+      "type": "Bike",
+      "cartype": "Activa",
+      "baseprice": 1200,
+      "capacity": 2,
+      "ftype": "Petrol",
+      "calculation": "Per Day",
+      "selfdrive": 1300,
+      "images": ["https://via.placeholder.com/150?text=Bike"],
+      "description": "A comfortable and efficient bike for city travel."
+    },
+    {
+      "type": "Sedan",
+      "cartype": "Honda City",
+      "baseprice": 8000,
+      "capacity": 5,
+      "ftype": "Petrol",
+      "calculation": "Per Day",
+      "selfdrive": 3500,
+      "images": ["https://via.placeholder.com/150?text=Sedan"],
+      "description": "A comfortable and fuel-efficient sedan for city driving."
+    },
+    {
+      "type": "Sedan",
+      "cartype": "Toyota Corolla",
+      "baseprice": 9000,
+      "capacity": 5,
+      "ftype": "Petrol",
+      "calculation": "Per Day",
+      "selfdrive": 3800,
+      "images": ["https://via.placeholder.com/150?text=Sedan"],
+      "description": "A reliable and spacious sedan for long trips."
+    },
+    {
+      "type": "Sedan",
+      "cartype": "Hyundai Elantra",
+      "baseprice": 8500,
+      "capacity": 5,
+      "ftype": "Petrol",
+      "calculation": "Per Day",
+      "selfdrive": 3600,
+      "images": ["https://via.placeholder.com/150?text=Sedan"],
+      "description": "A feature-packed sedan with a comfortable ride."
+    },
+    {
+      "type": "Sedan",
+      "cartype": "Ford Focus",
+      "baseprice": 7000,
+      "capacity": 5,
+      "ftype": "Petrol",
+      "calculation": "Per Day",
+      "selfdrive": 3200,
+      "images": ["https://via.placeholder.com/150?text=Sedan"],
+      "description": "A fun-to-drive sedan with advanced safety features."
+    },
+    {
+      "type": "Sedan",
+      "cartype": "Volkswagen Jetta",
+      "baseprice": 9500,
+      "capacity": 5,
+      "ftype": "Petrol",
+      "calculation": "Per Day",
+      "selfdrive": 4000,
+      "images": ["https://via.placeholder.com/150?text=Sedan"],
+      "description": "A premium sedan with a comfortable and quiet ride."
+    },
+    {
+      "type": "Traveller",
+      "cartype": "Mahindra Xylo",
+      "baseprice": 13000,
+      "capacity": 13,
+      "ftype": "Diesel",
+      "calculation": "Per Day",
+      "images": ["https://via.placeholder.com/150?text=Traveller"],
+      "description": "A spacious and comfortable vehicle for group travel."
+    },
+    {
+      "type": "Traveller",
+      "cartype": "Tata Sumo",
+      "baseprice": 11000,
+      "capacity": 13,
+      "ftype": "Diesel",
+      "calculation": "Per Day",
+      "images": ["https://via.placeholder.com/150?text=Traveller"],
+      "description": "A rugged and reliable vehicle for long trips."
+    },
+    {
+      "type": "Traveller",
+      "cartype": "Chevrolet Tavera",
+      "baseprice": 12500,
+      "capacity": 13,
+      "ftype": "Diesel",
+      "calculation": "Per Day",
+      "images": ["https://via.placeholder.com/150?text=Traveller"],
+      "description": "A comfortable and spacious vehicle for group travel."
+    },
+    {
+      "type": "Traveller",
+      "cartype": "Force Traveller",
+      "baseprice": 11500,
+      "capacity": 13,
+      "ftype": "Diesel",
+      "calculation": "Per Day",
+      "images": ["https://via.placeholder.com/150?text=Traveller"],
+      "description": "A reliable and spacious vehicle for long trips."
+    },
+    {
+      "type": "Traveller",
+      "cartype": "Eicher Skyline",
+      "baseprice": 12000,
+      "capacity": 13,
+      "ftype": "Diesel",
+      "calculation": "Per Day",
+      "images": ["https://via.placeholder.com/150?text=Traveller"],
+      "description": "A comfortable and spacious vehicle for group travel."
+    },
+    {
+      "type": "Bike",
+      "cartype": "Royal Enfield Classic",
+      "baseprice": 1800,
+      "capacity": 2,
+      "ftype": "Petrol",
+      "calculation": "Per Day",
+      "selfdrive": 1800,
+      "images": ["https://via.placeholder.com/150?text=Bike"],
+      "description": "A classic and iconic bike for a nostalgic ride."
+    },
+    {
+      "type": "Bike",
+      "cartype": "KTM Duke",
+      "baseprice": 2000,
+      "capacity": 2,
+      "ftype": "Petrol",
+      "calculation": "Per Day",
+      "selfdrive": 2000,
+      "images": ["https://via.placeholder.com/150?text=Bike"],
+      "description": "A high-performance bike for thrill seekers."
+    },
+    {
+      "type": "Bike",
+      "cartype": "Yamaha FZ",
+      "baseprice": 1600,
+      "capacity": 2,
+      "ftype": "Petrol",
+      "calculation": "Per Day",
+      "selfdrive": 1600,
+      "images": ["https://via.placeholder.com/150?text=Bike"],
+      "description": "A fuel-efficient bike for daily commuting."
+    }
+]

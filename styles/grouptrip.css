@@ -1,0 +1,84 @@
+.grouptablecontainer {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.grouptable {
+    width: 90%;
+    max-width: 800px;
+    border-collapse: separate; /* Changed from 'collapse' to 'separate' */
+    border-spacing: 0; /* Removes default spacing */
+    margin: 20px 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border-radius: 10px; /* Rounded corners for table */
+    overflow: hidden; /* Ensures the border-radius clips the content */
+}
+
+.grouptable th, td {
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid #dddddd;
+}
+
+.grouptable th:first-child, .grouptable td:first-child {
+    border-top-left-radius: 10px; /* Rounded corners for first cell of each row */
+}
+
+.grouptable th:last-child, .grouptable td:last-child {
+    border-top-right-radius: 10px; /* Rounded corners for last cell of each row */
+}
+
+.grouptable th {
+    background-color: #009879;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.grouptable tbody tr:nth-child(even) {
+    background-color: #f3f3f3;
+}
+
+.grouptable tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 10px; /* Rounded corner for bottom-left cell */
+}
+
+.grouptable tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 10px; /* Rounded corner for bottom-right cell */
+}
+
+.book-now-btn {
+    background-color: #008CBA;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.book-now-btn:hover {
+    background-color: #005f73;
+}
+
+@media screen and (max-width: 600px) {
+    .grouptable{
+        width: 100%;
+    }
+
+    .grouptable th, .grouptable td {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .book-now-btn {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}

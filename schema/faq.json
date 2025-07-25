@@ -1,0 +1,142 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Where on Earth is Ziro? Why is it so famous?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ziro Valley lies in Lower Subansiri, Arunachal Pradesh. It's famous for scenic views, the Apatani tribe, and the annual Ziro Festival of Music featuring indie rock."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How far is Guwahati to Ziro?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Around 448 km and takes about 12 hours by road."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is the road condition from Naharlagun to Ziro?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It's a mix of two-lane and four-lane highways with occasional landslides. Generally, in good shape."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Any Permit required to enter Arunachal Pradesh?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. ILP (for Indian nationals) or PAP (for foreigners) is required."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How far is your campsite from the festival ground?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Approximately 2 km."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Unmarried couples allowed to stay at the campsite?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, above 21 years old with valid ID. LGBTQ-friendly too."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the campsite child friendly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, but children should be at least 6 years old."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I get rice beer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, available at the festival site or pre-order with us."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I get Vegetarian food?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, multiple options are available."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How safe is it for female solo travelers or in groups?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Very safe. Northeast India is known for gender respect and hospitality."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How far from the festival site is the campsite?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "1.7 km. It's walkable (~25 mins)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "If it's far is there any transportation to the festival from the campsite?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Usually not during the fest due to road closures. Guests walk (~25 mins)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a pick-up from Guwahati?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, for Rs 6,000/- per seat. Departure on Sept 24; Return on Sept 29."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are there charging points in the tent?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Common charging stations available 24/7."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are there any lockers at the campsite?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, valuables can be kept with our team securely."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there an app-based taxi service at Ziro?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not yet. Team Encamp can assist with advance booking."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will you process the ILP?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, for Rs 599/-."
+      }
+    }
+  ]
+}

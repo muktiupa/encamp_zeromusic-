@@ -1,0 +1,43 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Camping Essentials for Ziro Festival Guests",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Water Supply Concerns",
+      "description": "Each year, we face a challenge with water shortages due to the high demand from campsites and vendors. Although we manage this with water supply vehicles, we advise guests to use water judiciously to help us maintain a sustainable environment."
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Campsite Conditions",
+      "description": "The festival is set on naturally soft ground, which can become muddy in the rain. We are improving drainage to enhance comfort and accessibility. Guests are recommended to bring gum boots for an easier experience navigating the campsite."
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Transport Coordination",
+      "description": "Arranging transportation for guests at the last minute can be challenging due to varying departure schedules and vehicle availability, affecting our ability to operate efficiently. We appreciate your cooperation and understanding as we manage these logistics."
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Tent Allocation",
+      "description": "We ensure a seamless check-in and check-out process, with gender-segregated accommodations for solo travelers, efficient tent allocation, and supervised check-outs to keep all tents ready and welcoming for every guest."
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "Electricity Supply",
+      "description": "While we primarily source power from the landowner's facilities, a backup generator is in place to ensure that there are no interruptions in charging devices or running essential services."
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "name": "Caravan Parking",
+      "description": "We acknowledge the growing demand for caravan parking. Plans are underway to establish a designated parking area to better accommodate our caravan guests in the future."
+    }
+  ]
+}

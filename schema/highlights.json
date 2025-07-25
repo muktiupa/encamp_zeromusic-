@@ -1,0 +1,43 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Key Highlights of Encamp Ziro Festival Accommodation & Tour Package",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Starlit Skies and Bamboo Lounges",
+      "description": "Relax in our unique bamboo machang setups and gaze at the night sky lit by a million stars. Perfect for catching up with friends or enjoying a peaceful moment alone."
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Music and Bonfires",
+      "description": "Keep the music flowing and spirits high with our nightly bonfire jams. Sing, dance, or simply enjoy the warmth as you meet fellow festival-goers."
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Eco-Friendly Initiatives",
+      "description": "Our sustainability-focused measures and improved systems ensure a sustainable and comfortable environment, even in the busiest times."
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Smooth Logistics",
+      "description": "From a streamlined tent allocation process to efficient transport solutions, we prioritize your convenience and satisfaction."
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "24×7 Support",
+      "description": "Stay connected with our dedicated customer support team, ensuring your festival experience is uninterrupted."
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "name": "Future-Ready Parking",
+      "description": "Coming soon—dedicated caravan parking! We’re expanding to accommodate all types of festival goers, ensuring everyone has a spot close to the action."
+    }
+  ]
+}

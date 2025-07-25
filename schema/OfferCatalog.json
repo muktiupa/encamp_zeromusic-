@@ -1,0 +1,48 @@
+{
+  "@context": "https://schema.org",
+  "@type": "OfferCatalog",
+  "name": "Ziro Festival Camping Packages",
+  "url": "https://encampadventures.com/ziro_camping",
+  "itemListElement": [
+    {
+      "@type": "Offer",
+      "name": "Post ZFM Tour 6N/7D Tawang",
+      "price": "41999",
+      "priceCurrency": "INR",
+      "availability": "https://schema.org/InStock",
+      "url": "https://encampadventures.com/itinerary/tawang---the-land-of-monpas---post-ziro-festival-group-tour-(6n-7d)/66433245dad32d6195007bdf"
+    },
+    {
+      "@type": "Offer",
+      "name": "Post ZFM Tour 6N/7D Anini",
+      "price": "38999",
+      "priceCurrency": "INR",
+      "availability": "https://schema.org/InStock",
+      "url": "https://encampadventures.com/itinerary/anini---valley-of-waterfalls---post-ziro-festival-of-music-group-tour---(6n-7d)/66445492dad32d619500c5e3"
+    },
+    {
+      "@type": "Offer",
+      "name": "Post ZFM Tour Mechuka 5N/6D",
+      "price": "38999",
+      "priceCurrency": "INR",
+      "availability": "https://schema.org/InStock",
+      "url": "https://encampadventures.com/itinerary/mechuka---the-lost-paradise---post-ziro-festival-of-music-group-tour---(5n-6d)/65c30d62342ffa54483c638f"
+    },
+    {
+      "@type": "Offer",
+      "name": "Post ZFM Group Tour Hidden Gems Meghalaya 4N/5D",
+      "price": "24999",
+      "priceCurrency": "INR",
+      "availability": "https://schema.org/InStock",
+      "url": "https://encampadventures.com/itinerary/hidden-gems-meghalaya---post-ziro-festival-of-music-group-tour---(4n-5d)/673595602a677751f3b3b073"
+    },
+    {
+      "@type": "Offer",
+      "name": "Ziro Festival Road Trip (Ex Guwahati) 5N/6D",
+      "price": "27999",
+      "priceCurrency": "INR",
+      "availability": "https://schema.org/InStock",
+      "url": "https://encampadventures.com/itinerary/ziro-festival-of-music-road-trip-(ex-guwahati)-5n-6d/65b4ce870e1fd7e47d9172cc"
+    }
+  ]
+}

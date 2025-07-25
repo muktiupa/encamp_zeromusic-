@@ -1,0 +1,73 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Campground Rules",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Your decency shall be our pride",
+      "description": "We request you to not get involved in any anti-social or unsolicited activities during the trip and at the campsite. The organizers reserve the right to withdraw all of your services in such cases with deep regrets."
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "We (Humans) are nothing in front of Nature",
+      "description": "The organizers are in no way obligated / responsible for any refund arising out of any natural or man-made calamities which are beyond our control. Rain and muddy fields are a thing at Ziro. Request you to book with the right expectations set."
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Furnish documents at Check-in",
+      "description": "Kindly carry valid ID proof and a payment receipt while on the trip. We appreciate mobile receipts, so does nature."
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Accommodation",
+      "description": "Tents are on a sharing basis, equipped with sleeping mats and bags. In case you need anything extra, please be patient with our team members."
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "Patience is solicited",
+      "description": "Ours is a campsite and not a resort. We request you to please be patient with our team members in case you need them to help out with anything. They are catering to 100+ guests at the campsite and someone else might be needing their immediate attention as well."
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "name": "Damages are chargeable",
+      "description": "In case of any damages to the camp material, the guest will be liable to pay the price in full along with the cost of Rs 1,000/- as a logistics fee to the organizers."
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "name": "Respect & Love",
+      "description": "Please be respectful of the local communities and their traditions. We are their guests and any disrespect shown towards them is unacceptable. People are usually sweet and kind in Ziro, and we are confident you will make good friends with the locals."
+    },
+    {
+      "@type": "ListItem",
+      "position": 8,
+      "name": "Ignore at your own risk",
+      "description": "Please read all the information carefully. You can also call / mail us to understand all the Campground Rules (terms and conditions.)"
+    },
+    {
+      "@type": "ListItem",
+      "position": 9,
+      "name": "Tourism infrastructure",
+      "description": "The tourism infrastructure in the mentioned destinations is not very developed. Roads to camp may be muddy. Carry appropriate clothing and footwear."
+    },
+    {
+      "@type": "ListItem",
+      "position": 10,
+      "name": "Transportation",
+      "description": "Transfers from Naharlagun Railway Station to Ziro will be in a Tata Sumo on a sharing basis. Private vehicles are also available at an added cost."
+    },
+    {
+      "@type": "ListItem",
+      "position": 11,
+      "name": "Rare occurrences",
+      "description": "Management has the right to alter the itinerary, and further holds all rights to cancel trips in case of unavoidable circumstances."
+    }
+  ]
+}
