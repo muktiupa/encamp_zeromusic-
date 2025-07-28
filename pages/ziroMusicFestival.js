@@ -3,31 +3,19 @@ import HtmlHead from '../components/common/HtmlHead';
 import Header from '../components/common/Header';
 import Footer from '../components/common/Footer';
 import Link from "next/link";
+import Hero from '../components/ziroMusicFestival/Hero';
+import InfoCard from '../components/ziroMusicFestival/InfoCard';
+import About from '../components/ziroMusicFestival/About';
+import ZiroStorySection from '../components/ziroMusicFestival/ZiroStorySection';
+import ZiroLineupSection from '../components/ziroMusicFestival/ZiroLineupSection';
+import GlimpsesSection from '../components/ziroMusicFestival/GlimpsesSection';
+import TicketPricingSection from '../components/ziroMusicFestival/TicketPricingSection';
+import ZiroFestivalPackage from '../components/ziroMusicFestival/ZiroFestivalPackage';
+import HowToReachZiro from '../components/ziroMusicFestival/HowToReachZiro';
 
 
 
-const Content = () => {
-    return (
-        <section>
-            <section id="book-now" className="trip__hero__area">
-                <div
-                    className="trip__hero__slide_vehicle"
-                    style={{
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                        backgroundImage: 'url(assets/img/zmf/zmf.jpg)'
-                    }}
-                >
-                    <div className="trip__hero__content p-5">
-                        {/* <h6 className="text-white small fw-bold">Eco-friendly Transport</h6> */}
-                        <h2 style={{ marginTop: '-12px' }}>Ziro Music Festical 2025</h2>
-                        <p className="text-white">25th - 28th Sep 2025</p>
-                    </div>
-                </div>
-            </section>
-        </section>
-    );
-}
+
 
 
 
@@ -55,7 +43,21 @@ function ziroMusicFestival() {
     <>
 	   <HtmlHead metaData={metaData}/>
        <Header/>
-       <Content/>
+       <Hero/>
+       <div className="container py-5">
+      <div className="row g-4 align-items-start">
+        <About/>
+        <InfoCard/>
+    </div>
+    </div>
+    <ZiroStorySection/>
+    <ZiroLineupSection/>
+    <GlimpsesSection/>
+    <TicketPricingSection/>
+    <ZiroFestivalPackage/>
+    <HowToReachZiro/>
+    
+
        <Footer/>
 	   </>
   )
