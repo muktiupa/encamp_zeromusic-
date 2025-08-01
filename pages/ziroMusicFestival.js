@@ -12,8 +12,16 @@ import GlimpsesSection from '../components/ziroMusicFestival/GlimpsesSection';
 import TicketPricingSection from '../components/ziroMusicFestival/TicketPricingSection';
 import ZiroFestivalPackage from '../components/ziroMusicFestival/ZiroFestivalPackage';
 import HowToReachZiro from '../components/ziroMusicFestival/HowToReachZiro';
-
-
+import PickupServiceForm from '../components/ziroMusicFestival/PickupServiceForm';
+import WhereToStay from '../components/ziroMusicFestival/WhereToStay';
+import ZiroFestivalBasecamp from '../components/ziroMusicFestival/ZiroFestivalBasecamp';
+import ZiroStayHighlights from '../components/ziroMusicFestival/ZiroStayHighlights';
+import ZfmVisitorTips from '../components/ziroMusicFestival/ZfmVisitorTips';
+import ZiroActivities from '../components/ziroMusicFestival/ZiroActivities';
+import PostZfmTours from '../components/ziroMusicFestival/PostZfmTours.js';
+import Testimonials from '../components/ziroMusicFestival/Testimonials.js';
+import ZfmDiaries from '../components/ziroMusicFestival/ZfmDiaries.js';
+import ZiroBookingCTABlack from '../components/ziroMusicFestival/ZiroBookingCTABlack.js';
 
 
 
@@ -56,7 +64,16 @@ function ziroMusicFestival() {
     <TicketPricingSection/>
     <ZiroFestivalPackage/>
     <HowToReachZiro/>
-    
+    <PickupServiceForm/>
+    <WhereToStay/>
+    <ZiroFestivalBasecamp/>
+    <ZiroStayHighlights/>
+    <ZfmVisitorTips/>
+    <ZiroActivities/>
+    <PostZfmTours/>
+    <Testimonials/>
+    <ZfmDiaries/>
+    <ZiroBookingCTABlack/>
 
        <Footer/>
 	   </>
